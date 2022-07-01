@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Teste B</title> 
+</h:head>
+
+<h:body>
+
+	<h:form>
+	
+		<p:messages id="messages" showDetail="true" closable="true" autoUpdate="true" />
+        
+   	</h:form>
+   	
+ 	<h:form>
+	
+		<h:panelGrid style="margin:0 auto; display:block; width:320px; border:3px solid black">
+			
+				<h:panelGroup>
+					<p:outputLabel>* Campo A: </p:outputLabel>
+					<p:inputText value="#{indexBean.campoA}" size="21" maxlength="19" />
+				</h:panelGroup>
+	
+				<h:panelGroup>
+					<p:outputLabel>* Campo B: </p:outputLabel>
+					<p:inputText value="#{indexBean.campoB}" size="21" maxlength="18" />
+				</h:panelGroup>
+	
+				<h:panelGroup style="margin:0 auto; display:block; width:240px">
+					<p:commandButton value="Somar" action="#{indexBean.soma}" update="@form" />
+					<p:commandButton value="Subtrair" action="#{indexBean.subtracao}" update="@form" style="float:right" />
+				</h:panelGroup>		
+			
+				<h:outputText value="#{indexBean.resultado}" rendered="#{indexBean.exibeResultado}" />
+		
+		</h:panelGrid>
+		
+	</h:form>
+
+</h:body>
+
+</html>
